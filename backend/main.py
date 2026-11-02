@@ -10,7 +10,8 @@ app = FastAPI(title="CodeLens API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173",
-     "http://localhost:5174"],
+     "http://localhost:5174",
+     "https://code-lens-ai-code-reviewer-two.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
