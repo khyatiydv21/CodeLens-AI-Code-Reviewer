@@ -72,12 +72,13 @@ def get_file_content(file_url):
     try:
         parsed_url = urlparse(file_url)
 
-if (
-    parsed_url.scheme != "https"
-    or parsed_url.hostname != "api.github.com"
-    or "/git/blobs/" not in parsed_url.path
-):
-    raise ValueError("Only GitHub blob URLs are allowed.")
+        if (
+            parsed_url.scheme != "https"
+            or parsed_url.hostname != "api.github.com"
+            or "/git/blobs/" not in parsed_url.path
+        ):
+            raise ValueError("Only GitHub blob URLs are allowed.")
+
         request = urllib.request.Request(
             file_url,
             headers={"User-Agent": "CodeLens"}
@@ -96,4 +97,3 @@ if (
 
     except Exception as e:
         raise Exception(f"Could not fetch file: {str(e)}")
-
