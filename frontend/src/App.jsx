@@ -24,7 +24,7 @@ function App() {
     setGithubFiles([])
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/github/files', {
+      const response = await fetch('https://codelens-ai-code-reviewer-6w6o.onrender.com/github/files', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ function App() {
   }
   async function handleFileSelect(file) {
     try {
-      const response = await fetch('http://127.0.0.1:8001/github/content', {
+      const response = await fetch('https://codelens-ai-code-reviewer-6w6o.onrender.com/github/content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ function App() {
     setReview(null)
 
     try {
-      const response = await fetch('http://127.0.0.1:8001/review', {
+      const response = await fetch('https://codelens-ai-code-reviewer-6w6o.onrender.com/review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
